@@ -35,8 +35,8 @@ A modular Verilog digital-design project implementing a Breakout-style game with
 The repository includes a Verilator-oriented launcher and C++/OpenGL viewer. A typical local workflow is:
 
 ```bash
-git clone https://github.com/chengmiao2005/FPGAfinalproject.git
-cd FPGAfinalproject
+git clone https://github.com/chengmiao2005/FPGA-Breakout-Game.git
+cd FPGA-Breakout-Game
 bash scripts/run_simulation.sh --build-only
 bash scripts/run_simulation.sh
 ```
