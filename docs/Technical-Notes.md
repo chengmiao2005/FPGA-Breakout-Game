@@ -4,23 +4,29 @@
 
 The launcher selects `DevelopmentBoard`, compiles the RTL in `src/`, and builds the C++/OpenGL viewer in `sim/`. Generated files are stored in `build/`.
 
-The source maps `a` to reset and `s`/`d`/`f`/`g` to B2/B3/B4/B5.
+The simulator maps `a` to reset and `s`/`d`/`f`/`g` to B2/B3/B4/B5.
 
-## Verification
+## Verification Record
 
-On 5 September 2026, the `DevelopmentBoard` source set passed static compilation/elaboration with pyslang 11.0.0 and a default time scale of `1ns/1ps`. The launcher passed `bash -n`.
+On 5 September 2026, the original `DevelopmentBoard` source set passed static compilation/elaboration with pyslang 11.0.0 and the launcher passed `bash -n`.
 
-Behavioral simulation, C++/OpenGL execution, FPGA synthesis, and board testing have not been verified in this review. Pin constraints, bitstreams, and measured hardware results are not included.
+The application-cleanup branch subsequently corrected several source-level issues identified during review:
 
-## Integration Issues
+- VGA horizontal/vertical counter wrap conditions and sync-pulse widths.
+- Out-of-range reset indexing in the end-screen text memory.
+- Text bitmap column indexing at the 128-pixel boundary.
+- Active-low composite start-button wiring in the simulation wrapper.
+- Mode-width matching between the wrapper and the start/end display module.
+- Unused simulator LED outputs are now explicitly held inactive.
 
-| Area | Current source behavior |
-| --- | --- |
-| Start input | `btn_start = B2 \| B5` requires both active-low inputs to be low to generate a falling edge. The intended start-key mapping needs checking. |
-| Raster timing | The horizontal counter increments while `hcount <= 799`, including a count of 800. Sync bounds need checking against the viewer. |
-| Text memory | `char_1` has indices 0–10, but its reset loop writes indices 0–31. |
-| Initialization | Some flash and simulator-status signals have no reset assignment. |
-| Wrapper interface | A three-bit mode connects to a two-bit text-screen input; LED outputs are unassigned. |
-| Button handling | Inputs are sampled and edge-detected. The `DEBOUNCE` parameter is unused. |
+These maintenance changes have not been re-validated with a full behavioral simulation or physical FPGA board in this review environment.
+
+## Current Scope and Limitations
+
+- The public repository is intended for source review and simulation-oriented demonstration.
+- The C++/OpenGL viewer expects active-high sync edges, so the RTL sync polarity is retained for compatibility with that wrapper.
+- The `DEBOUNCE` parameter in `btn_ctrl.v` is currently unused; inputs are synchronized and edge-detected but no counter-based debounce filter is implemented.
+- Pin constraints, generated bitstreams, measured timing reports, and physical-board measurements are not included in the public repository.
+- Hardware synthesis, bitstream generation, and board-level testing should be repeated before making claims about physical deployment.
 
 [Project overview](../README.md)
