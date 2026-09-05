@@ -16,4 +16,4 @@ Paths before and after the September 2026 repository organization.
 | `sim_simulator.cpp` | [sim/simulator.cpp](../sim/simulator.cpp) |
 | `sim_run simulation.sh` | [scripts/run_simulation.sh](../scripts/run_simulation.sh) |
 
-Original commits remain in the repository history. Renaming a file does not indicate a new implementation.
+
