@@ -45,9 +45,9 @@ Build products are stored in `build/`.
 
 ## Verification Scope
 
-The current repository has been checked for source-level compilation/elaboration of the development-board source set. The repository does **not** claim verified FPGA board deployment, bitstream generation, or measured hardware performance in its current public form.
+A prior version of the development-board source set passed source-level compilation/elaboration during repository review. The current cleanup also fixes several obvious integration issues; those maintenance changes have not been re-validated with a full behavioral simulation or physical FPGA board in this review environment.
 
-For implementation notes and remaining integration items, see [Technical Notes](docs/Technical-Notes.md).
+The repository does **not** claim verified board deployment, bitstream generation, or measured hardware performance in its current public form. See [Technical Notes](docs/Technical-Notes.md) for the verification record and remaining limitations.
 
 ## Portfolio
 
