@@ -10,7 +10,7 @@ The simulator maps `a` to reset and `s`/`d`/`f`/`g` to B2/B3/B4/B5.
 
 On 5 September 2026, the original `DevelopmentBoard` source set passed static compilation/elaboration with pyslang 11.0.0 and the launcher passed `bash -n`.
 
-The application-cleanup branch subsequently corrected several source-level issues identified during review:
+The September 2026 repository cleanup subsequently corrected several source-level issues identified during review:
 
 - VGA horizontal/vertical counter wrap conditions and sync-pulse widths.
 - Out-of-range reset indexing in the end-screen text memory.
