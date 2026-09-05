@@ -1,4 +1,8 @@
-module btn_ctrl(	input clk,
+module btn_ctrl #(
+    parameter WIDTH = 6,
+    parameter LIMIT = 19,
+    parameter DEBOUNCE = 15000
+)(	input clk,
 				input reset_n,
 				input a,
 				input b,
@@ -6,9 +10,6 @@ module btn_ctrl(	input clk,
 				output start,
 				output reg [WIDTH-1:0] ctrl);
 	
-	parameter WIDTH = 6;
-	parameter LIMIT = 19;
-	parameter DEBOUNCE = 15000;
 	//parameter INITIAL = 9;
 	
 reg [2:0] btn;
