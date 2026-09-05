@@ -14,7 +14,7 @@ A modular Breakout-style digital system implemented with FPGA-oriented RTL.
 - Implemented coordinate-based rendering, win/lose logic, and start/end display states.
 - Organized the source with a development-board wrapper and C++/OpenGL simulation viewer.
 
-[Repository](https://github.com/chengmiao2005/FPGAfinalproject) · [Verilog source](https://github.com/chengmiao2005/FPGAfinalproject/tree/main/src)
+[Repository](https://github.com/chengmiao2005/FPGA-Breakout-Game) · [Verilog source](https://github.com/chengmiao2005/FPGA-Breakout-Game/tree/main/src)
 
 ## 2. LPC Voice Changer
 
@@ -26,7 +26,7 @@ A frame-based speech-processing project using linear predictive coding and pitch
 - Modified excitation and LPC pole angles during resynthesis.
 - Added microphone/WAV processing with waveform and spectrum comparison utilities.
 
-[Repository](https://github.com/chengmiao2005/DSP-voice-changer) · [Core processing code](https://github.com/chengmiao2005/DSP-voice-changer/blob/main/lpc_male_to_female.m)
+[Repository](https://github.com/chengmiao2005/LPC-Voice-Changer-MATLAB) · [Core processing code](https://github.com/chengmiao2005/LPC-Voice-Changer-MATLAB/blob/main/lpc_male_to_female.m)
 
 ## 3. Wireless Power Transfer Modeling
 
@@ -38,4 +38,4 @@ A steady-state coupled-coil wireless-power model based on phasor calculations an
 - Explored frequency-response and coupling-coefficient effects through parameter sweeps.
 - Structured the model into reusable calculation and visualization scripts.
 
-[Repository](https://github.com/chengmiao2005/-project-pp-) · [Model code](https://github.com/chengmiao2005/-project-pp-/blob/main/WirelessPowerSystem.m)
+[Repository](https://github.com/chengmiao2005/Wireless-Power-Transfer-MATLAB) · [Model code](https://github.com/chengmiao2005/Wireless-Power-Transfer-MATLAB/blob/main/WirelessPowerSystem.m)
