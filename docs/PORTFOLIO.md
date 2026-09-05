@@ -1,32 +1,45 @@
-# Miao Cheng — Electronic Information Projects
+# Miao Cheng | Engineering Portfolio
 
-Undergraduate in Electronic Information at Macau University of Science and Technology.
+**Electronic Information · Macau University of Science and Technology**
 
-My interests include digital IC design, robotics and control, power systems, and communication systems. The projects below provide source-code examples of my coursework in digital hardware, signal processing, and circuit modeling.
+Selected projects in digital hardware design, speech signal processing, and wireless power modeling.
 
-## Selected projects
+## FPGA Breakout Game
 
-| Project | Technical content | Start here |
-| --- | --- | --- |
-| **FPGA Breakout Game** | Verilog module integration, finite-state control, collision logic, and VGA pixel rendering | [Overview](../README.md) · [RTL](../src) |
-| **MATLAB LPC Voice Changer** | Linear predictive coding, pitch-period estimation, excitation synthesis, and spectrum analysis | [Overview](https://github.com/chengmiao2005/DSP-voice-changer) · [Demo entry point](https://github.com/chengmiao2005/DSP-voice-changer/blob/main/voice_demo.m) |
-| **Wireless Power Transfer Model** | Coupled-coil phasor calculations, compensation capacitances, and frequency/coupling sweeps | [Overview](https://github.com/chengmiao2005/-project-pp-) · [Model](https://github.com/chengmiao2005/-project-pp-/blob/main/WirelessPowerSystem.m) |
+**Verilog · Finite-State Machines · VGA**
 
-Each project README explains the source files, dependencies, and current verification scope. The repositories contain coursework and computational models; hardware results and quantitative benchmarks are included only when recorded in the project itself.
+A modular digital-design course project combining paddle input, ball motion, collision logic, and pixel rendering for a Breakout-style game.
 
-## Supporting digital-design exercises
+- Game logic organized into control, motion, collision, and display modules.
+- VGA raster generation and coordinate-based rendering of the paddle, ball, and blocks.
+- A development-board wrapper and C++/OpenGL viewer support the simulation setup.
 
-| Topic | Repository | What to inspect |
-| --- | --- | --- |
-| Combinational logic | [FPGA1](https://github.com/chengmiao2005/FPGA1) | One-bit adder and comparator |
-| Decoder coding styles | [FPGA2](https://github.com/chengmiao2005/FPGA2) | Complete assignments and deliberate latch examples |
-| Sequential counter | [FPGA2-1](https://github.com/chengmiao2005/FPGA2-1) | Reset, rollover, and LED toggle |
-| Running light | [FPGA2-2](https://github.com/chengmiao2005/FPGA2-2) | Counter-driven pattern rotation |
-| VGA components | [FPGA3](https://github.com/chengmiao2005/FPGA3) | Raster timing and text rendering |
-| Display state machine | [FPGA4](https://github.com/chengmiao2005/FPGA4) | Color bars, MUST, and END screen selection |
+[View Verilog source](https://github.com/chengmiao2005/FPGAfinalproject/tree/main/src) · [Project documentation](https://github.com/chengmiao2005/FPGAfinalproject)
 
-## Reading guide
+## LPC Voice Changer
 
-For **digital hardware**, start with the Breakout module table, then inspect the decoder comparisons and display controller. For **signal processing**, start with the LPC function and audio demo. For **power and energy**, start with the wireless-power model and its documented assumptions.
+**MATLAB · Digital Signal Processing · Speech Analysis**
 
-[GitHub profile](https://github.com/chengmiao2005)
+A frame-based speech-processing project using linear predictive coding to analyze and resynthesize audio with a voice-changing effect.
+
+- LPC analysis, autocorrelation-based pitch-period estimation, and excitation synthesis.
+- Pitch-period and LPC pole-angle modification during resynthesis.
+- A microphone/WAV entry point with original and processed waveform and spectrum plots.
+
+[View processing code](https://github.com/chengmiao2005/DSP-voice-changer/blob/main/lpc_male_to_female.m) · [Project documentation](https://github.com/chengmiao2005/DSP-voice-changer)
+
+## Wireless Power Transfer Model
+
+**MATLAB · Circuit Modeling · Parameter Analysis**
+
+A steady-state model of a coupled-coil wireless-power system using complex impedances and phasor calculations.
+
+- Compensation-capacitance calculations and branch-current analysis.
+- Input/output power and efficiency calculations within the circuit model.
+- Frequency-response and coupling-coefficient sweeps to investigate parameter effects.
+
+[View model code](https://github.com/chengmiao2005/-project-pp-/blob/main/WirelessPowerSystem.m) · [Project documentation](https://github.com/chengmiao2005/-project-pp-)
+
+---
+
+[More digital-design coursework](https://github.com/chengmiao2005?tab=repositories)
