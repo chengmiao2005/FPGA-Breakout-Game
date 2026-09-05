@@ -1,42 +1,47 @@
-# Miao Cheng — Engineering Projects
+# Miao Cheng — Engineering Portfolio
 
-**Electronic Information · Macau University of Science and Technology**
+**Electronic and Information Engineering · Macau University of Science and Technology**
 
-Selected projects in digital hardware design, speech signal processing, and wireless power modeling.
+Selected undergraduate projects in digital hardware, digital signal processing, and wireless-power modeling. The portfolio is intended as a concise companion to my graduate-application CV.
 
-## FPGA Breakout Game
+## 1. FPGA Breakout Game
 
-**Verilog · Finite-State Machines · VGA**
+**Verilog HDL · RTL Design · Finite-State Machines · VGA**
 
-A modular digital-design course project combining paddle input, ball motion, collision logic, and pixel rendering for a Breakout-style game.
+A modular digital-design project implementing a Breakout-style game on an FPGA-oriented RTL architecture.
 
-- Game logic organized into control, motion, collision, and display modules.
-- VGA raster generation and coordinate-based rendering of the paddle, ball, and blocks.
-- A development-board wrapper and C++/OpenGL viewer support the simulation setup.
+- Separated control, ball-motion, collision, display, and VGA-timing logic into dedicated modules.
+- Implemented paddle and ball rendering, block-state updates, win/lose logic, and start/end screens.
+- Organized the source for simulation-oriented review with a development-board wrapper and C++/OpenGL viewer.
 
-[View Verilog source](https://github.com/chengmiao2005/FPGAfinalproject/tree/main/src) · [Project documentation](https://github.com/chengmiao2005/FPGAfinalproject)
+[Repository](https://github.com/chengmiao2005/FPGAfinalproject) · [Verilog source](https://github.com/chengmiao2005/FPGAfinalproject/tree/main/src)
 
-## LPC Voice Changer
+## 2. LPC Voice Changer
 
-**MATLAB · Digital Signal Processing · Speech Analysis**
+**MATLAB · Digital Signal Processing · Speech Analysis/Synthesis**
 
-A frame-based speech-processing project using linear predictive coding to analyze and resynthesize audio with a voice-changing effect.
+A frame-based speech-processing project using linear predictive coding and pitch-period estimation to modify recorded speech.
 
-- LPC analysis, autocorrelation-based pitch-period estimation, and excitation synthesis.
-- Pitch-period and LPC pole-angle modification during resynthesis.
-- A microphone/WAV entry point with original and processed waveform and spectrum plots.
+- Performed LPC analysis and autocorrelation-based pitch-period estimation.
+- Modified excitation and LPC pole angles during resynthesis to create a voice-changing effect.
+- Added standalone microphone/WAV processing and waveform/spectrum comparison utilities.
 
-[View processing code](https://github.com/chengmiao2005/DSP-voice-changer/blob/main/lpc_male_to_female.m) · [Project documentation](https://github.com/chengmiao2005/DSP-voice-changer)
+[Repository](https://github.com/chengmiao2005/DSP-voice-changer) · [Core processing code](https://github.com/chengmiao2005/DSP-voice-changer/blob/main/lpc_male_to_female.m)
 
-## Wireless Power Transfer Model
+## 3. Wireless Power Transfer Modeling
 
-**MATLAB · Circuit Modeling · Parameter Analysis**
+**MATLAB · Circuit Modeling · Complex Impedance · Parameter Sweeps**
 
-A steady-state model of a coupled-coil wireless-power system using complex impedances and phasor calculations.
+A steady-state coupled-coil wireless-power model using phasor calculations and complex impedances.
 
-- Compensation-capacitance calculations and branch-current analysis.
-- Input/output power and efficiency calculations within the circuit model.
-- Frequency-response and coupling-coefficient sweeps to investigate parameter effects.
+- Calculated compensation capacitances, branch currents, input/output power, and model efficiency.
+- Explored frequency response and coupling-coefficient effects through parameter sweeps.
+- Structured the model into reusable calculation and visualization scripts.
 
-[View model code](https://github.com/chengmiao2005/-project-pp-/blob/main/WirelessPowerSystem.m) · [Project documentation](https://github.com/chengmiao2005/-project-pp-)
+[Repository](https://github.com/chengmiao2005/-project-pp-) · [Model code](https://github.com/chengmiao2005/-project-pp-/blob/main/WirelessPowerSystem.m)
 
+---
+
+### Notes
+
+These repositories document selected coursework and independent engineering work. Public repositories include only material suitable for external review; project descriptions are limited to functionality supported by the uploaded source and documentation.
