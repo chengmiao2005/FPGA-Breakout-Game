@@ -1,4 +1,4 @@
-# Miao Cheng | Engineering Portfolio
+# Miao Cheng — Engineering Projects
 
 **Electronic Information · Macau University of Science and Technology**
 
@@ -40,6 +40,3 @@ A steady-state model of a coupled-coil wireless-power system using complex imped
 
 [View model code](https://github.com/chengmiao2005/-project-pp-/blob/main/WirelessPowerSystem.m) · [Project documentation](https://github.com/chengmiao2005/-project-pp-)
 
----
-
-[More digital-design coursework](https://github.com/chengmiao2005?tab=repositories)
