@@ -1,13 +1,11 @@
 module start_end(
     input   clk,
     input   rst,
-    
-    input  video_hs	,     
-    input  video_vs	, 
-    input  [1:0] mode,    
-    input  	[9:0]  pixel_xpos	,
-    input  	[9:0]  pixel_ypos  ,
-
+    input  video_hs,
+    input  video_vs,
+    input  [1:0] mode,
+    input  [9:0] pixel_xpos,
+    input  [9:0] pixel_ypos,
     output reg [15:0] rgb565
 );
 
@@ -17,7 +15,7 @@ reg [127:0] char_1 [0:10];
 integer i;
 always@(posedge clk) begin
     if(rst) begin
-        for(i=0; i<=31;i=i+1)
+        for(i=0; i<=31; i=i+1)
             char_0[i] <= 0;
     end else begin
         char_0[ 0] <= 128'h00000000000000000000000000000000;
@@ -57,7 +55,7 @@ end
 
 always@(posedge clk) begin
     if(rst) begin
-        for(i=0; i<=31;i=i+1)
+        for(i=0; i<=10; i=i+1)
             char_1[i] <= 0;
     end else begin
         char_1[ 0] <= 128'h07F80380F00F7FFC00007FFCF01F7FC0;
@@ -77,53 +75,52 @@ end
 reg video_vs_d;
 reg content_sel;
 wire vs_fall = ~video_vs & video_vs_d;
+
 always@(posedge clk) begin
-    if(rst) video_vs_d <= 0;
-    else    video_vs_d <= video_vs;
+    if(rst)
+        video_vs_d <= 0;
+    else
+        video_vs_d <= video_vs;
 end
 
 always@(posedge clk) begin
-    if(rst) content_sel <= 0;
-    else if(vs_fall) begin
+    if(rst)
+        content_sel <= 0;
+    else if(vs_fall)
         content_sel <= ~content_sel;
-    end
 end
 
 always@(posedge clk) begin
     if(rst) begin
-        rgb565 <= 'h0;
-    end else if(mode == 3)begin
+        rgb565 <= 16'h0000;
+    end else if(mode == 2'd3) begin
         case(content_sel)
             1'b1: begin
-                if(pixel_xpos >= 'd256 & pixel_xpos < 'd384 & pixel_ypos >=210 & pixel_ypos < 221) begin
-                    rgb565 <= {16{char_1[pixel_ypos-210][384-pixel_xpos]}};
-                end else begin
-                    rgb565 <= 0;
-                end
+                if(pixel_xpos >= 10'd256 && pixel_xpos < 10'd384 && pixel_ypos >= 10'd210 && pixel_ypos < 10'd221)
+                    rgb565 <= {16{char_1[pixel_ypos-210][383-pixel_xpos]}};
+                else
+                    rgb565 <= 16'h0000;
             end
             default: begin
-                if(pixel_xpos >= 'd256 & pixel_xpos < 'd384 & pixel_ypos >=200 & pixel_ypos < 211) begin
-                    rgb565 <= {16{char_1[pixel_ypos-200][384-pixel_xpos]}};
-                end else begin
-                    rgb565 <= 0;
-                end
+                if(pixel_xpos >= 10'd256 && pixel_xpos < 10'd384 && pixel_ypos >= 10'd200 && pixel_ypos < 10'd211)
+                    rgb565 <= {16{char_1[pixel_ypos-200][383-pixel_xpos]}};
+                else
+                    rgb565 <= 16'h0000;
             end
         endcase
     end else begin
         case(content_sel)
             1'b1: begin
-                if(pixel_xpos >= 'd256 & pixel_xpos < 'd384 & pixel_ypos >=210 & pixel_ypos < 242) begin
-                    rgb565 <= {16{char_0[pixel_ypos-210][384-pixel_xpos]}};
-                end else begin
-                    rgb565 <= 0;
-                end
+                if(pixel_xpos >= 10'd256 && pixel_xpos < 10'd384 && pixel_ypos >= 10'd210 && pixel_ypos < 10'd242)
+                    rgb565 <= {16{char_0[pixel_ypos-210][383-pixel_xpos]}};
+                else
+                    rgb565 <= 16'h0000;
             end
             default: begin
-                if(pixel_xpos >= 'd256 & pixel_xpos < 'd384 & pixel_ypos >=200 & pixel_ypos < 232) begin
-                    rgb565 <= {16{char_0[pixel_ypos-200][384-pixel_xpos]}};
-                end else begin
-                    rgb565 <= 0;
-                end
+                if(pixel_xpos >= 10'd256 && pixel_xpos < 10'd384 && pixel_ypos >= 10'd200 && pixel_ypos < 10'd232)
+                    rgb565 <= {16{char_0[pixel_ypos-200][383-pixel_xpos]}};
+                else
+                    rgb565 <= 16'h0000;
             end
         endcase
     end
