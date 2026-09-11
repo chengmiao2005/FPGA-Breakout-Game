@@ -54,16 +54,17 @@ The models use provisional test parameters; final parameter selection and wider 
 
 [Repository](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB) · [Stage 5 model-building script](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB/blob/main/FYP_Flywheel_Stage5_COMPLETE_v2.m) · [Simulation output](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB/blob/main/results/stage5-results.png)
 
-## 5. Hengqin Enterprise Map Visualization
+## 5. Hengqin Enterprise Map and Data Preparation
 
-**HTML/CSS/JavaScript · Leaflet · Web GIS · JSON · Data Visualization**
+**HTML/CSS/JavaScript · Leaflet · Python · Excel Data Preparation · Web GIS**
 
 A web-based enterprise information mapping application adapted from an internship project, presented with fictional demonstration records.
 
 - Integrated map markers, enterprise search, detail panels, and interactive record editing.
 - Supported visit logs, JSON import/export, manual coordinate confirmation, and geographic range management.
 - Provided separate viewing and browser-local editing interfaces, with locally bundled Leaflet assets.
+- Used supporting Python scripts to read Excel records, match coordinates by enterprise name/address, and check exported data against the source workbook.
 
 The public edition uses synthetic enterprise data and browser-local storage; it does not include production records or server-side authentication.
 
-[Repository](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System) · [Editing interface source](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/blob/main/admin.html) · [Demonstration data](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/blob/main/data/seed-enterprises.js)
+[Repository](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System) · [Editing interface source](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/blob/main/admin.html) · [Demonstration data](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/blob/main/data/seed-enterprises.js) · [Data preparation scripts](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/tree/main/tools)
