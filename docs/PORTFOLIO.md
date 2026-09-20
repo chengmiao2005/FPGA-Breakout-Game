@@ -2,7 +2,7 @@
 
 **Electronic and Information Engineering · Macau University of Science and Technology**
 
-Selected projects in digital hardware design, digital signal processing, power and energy modeling, feedback control, and web-based geographic visualization.
+Selected projects in digital hardware design, semiconductor device characterisation, digital signal processing, power and energy modeling, feedback control, and web-based geographic visualization.
 
 ## 1. FPGA Breakout Game
 
@@ -68,3 +68,18 @@ A web-based enterprise information mapping application adapted from an internshi
 The public edition uses synthetic enterprise data and browser-local storage; it does not include production records or server-side authentication.
 
 [Repository](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System) · [Editing interface source](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/blob/main/admin.html) · [Demonstration data](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/blob/main/data/seed-enterprises.js) · [Data preparation scripts](https://github.com/chengmiao2005/Hengqin-Tax-Map-Visualization-System/tree/main/tools)
+
+## 6. MOSFET Characterisation and Parameter Extraction
+
+**MATLAB · ngspice · Device Modelling · Parameter Extraction · Measurement-Error Analysis**
+
+A simulation study connecting an educational MOSFET model with synthetic measurement errors and parameter estimation.
+
+- Compared averaging and two-point calibration across 400 synthetic error scenarios; calibration with 25-reading averages reduced threshold RMSE from 12.5435 mV to 0.9011 mV, while retaining all 15 scenarios with worse absolute error after calibration.
+- Automated MATLAB-to-ngspice DC sweeps and compared eight curves containing 1,078 simulated bias-point records against the analytical model.
+- Extracted threshold voltage, current-scale coefficient, and channel-length modulation using 107 distinct fitting points, then evaluated 959 distinct held-out points without fit/check overlap.
+- Demonstrated parameter non-uniqueness in a fixed-drain transfer curve and how an additional output scan supplies information to distinguish candidate parameters.
+
+The saved runs use a shared educational model. Numerical agreement describes implementation consistency and same-model parameter recovery; it does not establish physical measurement accuracy.
+
+[Repository](https://github.com/chengmiao2005/MOSFET-Characterisation-MATLAB-ngspice) · [Results and methodology](https://github.com/chengmiao2005/MOSFET-Characterisation-MATLAB-ngspice/blob/main/docs/RESULTS.md) · [Parameter-extraction code](https://github.com/chengmiao2005/MOSFET-Characterisation-MATLAB-ngspice/blob/main/project/stage3/RUN_STAGE3.m)
