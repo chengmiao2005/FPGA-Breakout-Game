@@ -44,15 +44,16 @@ A steady-state coupled-coil wireless-power model based on phasor calculations an
 
 **MATLAB · Simulink · Dynamic Modeling · Feedback Control · Energy Storage**
 
-An ongoing five-stage simulation study of motor–flywheel dynamics and control for a final-year project on rail transit braking energy recovery.
+An ongoing final-year simulation study of rail transit braking energy recovery, with five incremental motor–flywheel models and an integrated DC motor–flywheel and converter system.
 
-- Built incremental models covering ideal flywheel dynamics, mechanical losses, speed protection, and DC motor coupling.
-- Implemented cascaded proportional speed/current control with compensation, feedforward, and current/voltage limits.
-- Added idle, charging, discharging, and protection modes, with model-building scripts and an original simulation result figure.
+- Connected synthetic railway demand, a DC link, a nonideal bidirectional converter and the motor–flywheel plant, with PI current control and anti-windup.
+- Saved native MATLAB results cover 11 cases with 322/322 checks; one native Simulink integration case passed 67/67 checks. The project includes reproducible energy-accounting verification.
+- Added 12 paired C++ parameter-study scenarios with matched terminal stores. Supplemental checks pass 945/948, with three strict auxiliary energy-identity diagnostics still failed.
+- A separate aggregate rail-storage dispatch study compares schedule-informed and voltage-feedback control with matched terminal states. Across 100 synthetic scenarios, the mean additional source-energy saving is 0.0827 kWh (about 0.099%).
 
-The models use provisional test parameters; final parameter selection and wider rail-system integration remain in progress.
+Parameters remain provisional and hardware validation is pending. The dispatch study is documented in an unpublished, non-peer-reviewed working manuscript.
 
-[Repository](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB) · [Stage 5 model-building script](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB/blob/main/FYP_Flywheel_Stage5_COMPLETE_v2.m) · [Simulation output](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB/blob/main/results/stage5-results.png)
+[Repository](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB) · [Integrated model and results](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB/tree/main/integrated-system) · [Validation scope](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB/blob/main/integrated-system/docs/VALIDATION_SCOPE_CN.md) · [Rail dispatch study](https://github.com/chengmiao2005/Flywheel-Energy-Storage-System-MATLAB/tree/main/research/rail-dispatch)
 
 ## 5. Hengqin Enterprise Map and Data Preparation
 
